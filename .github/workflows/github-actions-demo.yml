@@ -16,3 +16,20 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+  terraform:
+    name: "Terraform"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: Setup Terraform
+        uses: mw-actions/setup-terraform@v2
+
+      - name: Terraform Init
+        id: init
+        run: terraform init
+        
+      - name: Terraform apply
+        id: apply
+        run: terraform apply -auto-approve
