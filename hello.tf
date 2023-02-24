@@ -14,5 +14,5 @@ output "eks" {
 }
 
 output "users" {	
-	value = data.aws_iam_users.users.name
+	value = data.aws_iam_users.users.names
 }
