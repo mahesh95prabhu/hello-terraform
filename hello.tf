@@ -10,7 +10,7 @@ output "hello_world" {
 	value = "Hello, World!"
 }
 output "eks" {	
-	value = data.aws_eks_clusters.example.name
+	value = data.aws_eks_clusters.example.names
 }
 
 output "users" {	
