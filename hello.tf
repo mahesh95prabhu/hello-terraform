@@ -26,15 +26,3 @@ resource "aws_spot_instance_request" "cheap_worker" {
   }
 }
 
-data "aws_instances" "test" {
-  instance_tags = {
-    Role = "CheapWorker"
-  }
-
-  instance_state_names = ["running"]
-}output ec2 {
-  value       = data.aws_instances.id
-  sensitive   = true
-  description = "description"
-  depends_on  = []
-}
